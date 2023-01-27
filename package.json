@@ -1,5 +1,5 @@
 {
-  "name": "ts-nextjs-tailwind-starter",
+  "name": "ts-nextjs-tailwind",
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
@@ -13,8 +13,7 @@
     "test": "jest",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "prepare": "husky install"
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "clsx": "^1.2.1",
@@ -32,6 +31,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "autoprefixer": "^10.4.13",

@@ -1,6 +1,6 @@
 {
   "name": "main_web_site",
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.2.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

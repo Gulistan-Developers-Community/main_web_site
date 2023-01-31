@@ -1,28 +1,5 @@
 import Header from '../components/Header';
 
-// export default function () {
-//   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-//   const [likes, setLikes] = useState(0);
-
-//   function handleClick() {
-//     setLikes(likes + 1);
-//     console.log(likes + 1);
-//   }
-
-//   return (
-//     <div>
-//       <Header title="Develop. Preview. Ship. 🚀" />
-//       <ul>
-//         {names.map((name) => (
-//           <li key={name}>{name}</li>
-//         ))}
-//       </ul>
-
-//       <button onClick={handleClick}>Like ({likes})</button>
-//     </div>
-//   );
-// }
-
 import { useState } from 'react';
 import { Tab } from '@headlessui/react';
 
@@ -85,7 +62,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <div className="w-full max-w-md px-2 py-16 sm:px-0">
+      <div className="z-0 w-full max-w-md px-2 py-16 sm:px-0">
         <Tab.Group>
           <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
             {Object.keys(categories).map((category) => (
@@ -118,7 +95,7 @@ export default function HomePage() {
                   {posts.map((post) => (
                     <li
                       key={post.id}
-                      className="relative rounded-md p-3 hover:bg-gray-100"
+                      className=" rounded-md p-3 hover:bg-gray-100"
                     >
                       <h3 className="text-sm font-medium leading-5">
                         {post.title}
@@ -135,7 +112,7 @@ export default function HomePage() {
                       <a
                         href="#"
                         className={classNames(
-                          'absolute inset-0 rounded-md',
+                          'inset-0 rounded-md',
                           'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
                         )}
                       />

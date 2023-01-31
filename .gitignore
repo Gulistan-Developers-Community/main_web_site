@@ -3,3 +3,11 @@
 node_modules
 
 .next
+
+.pnp.cjs
+
+.pnp.loader.mjs
+
+.yarnrc.yml
+
+package-lock.json

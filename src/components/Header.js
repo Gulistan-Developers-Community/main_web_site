@@ -1,10 +1,9 @@
 import { Fragment } from 'react';
-import Image from 'next/image';
 import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { solutions, recentPosts, resources, callsToAction } from './solution';
-import Logo from '../public/images/logo.png';
+import  Logo  from "./Logo";
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -16,7 +15,7 @@ export default function Header() {
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="/">
-              <Image width={50} height={50} src={Logo} alt="logo" />
+              <Logo/>
             </a>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
@@ -108,7 +107,7 @@ export default function Header() {
               Info
             </a>
             <a
-              href="#"
+              href="docs"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Docs
@@ -206,13 +205,13 @@ export default function Header() {
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
             <a
-              href="#"
+              href="signup"
               className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Sign in
             </a>
             <a
-              href="#"
+              href="signup"
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
             >
               Sign up
@@ -298,14 +297,14 @@ export default function Header() {
               </div>
               <div>
                 <a
-                  href="#"
+                  href="signup"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >
                   Sign up
                 </a>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                  <a href="signup" className="text-indigo-600 hover:text-indigo-500">
                     Sign in
                   </a>
                 </p>

@@ -12,22 +12,22 @@ import {
 } from '@heroicons/react/24/outline';
 const solutions = [
   {
-    name: 'Analytics',
+    name: 'Docs',
     description:
       'Get a better understanding of where your traffic is coming from.',
-    href: '#',
+    href: 'docs',
     icon: ChartBarIcon,
   },
   {
-    name: 'Engagement',
+    name: '404',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '404',
     icon: CursorArrowRaysIcon,
   },
   {
-    name: 'Security',
+    name: 'Info',
     description: "Your customers' data will be safe and secure.",
-    href: '#',
+    href: 'info',
     icon: ShieldCheckIcon,
   },
   {

@@ -95,7 +95,7 @@ export default function HomePage() {
                   {posts.map((post) => (
                     <li
                       key={post.id}
-                      className=" rounded-md p-3 hover:bg-gray-100"
+                      className="rounded-md p-3 hover:bg-gray-100"
                     >
                       <h3 className="text-sm font-medium leading-5">
                         {post.title}

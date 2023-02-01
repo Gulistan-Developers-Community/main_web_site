@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { solutions, recentPosts, resources, callsToAction } from './solution';
 import  Logo  from "./Logo";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -66,14 +67,14 @@ export default function Header() {
                                 className="h-6 w-6 flex-shrink-0 text-indigo-600"
                                 aria-hidden="true"
                               />
-                              <div className="ml-4">
+                              <span className="ml-4">
                                 <p className="text-base font-medium text-gray-900">
                                   {item.name}
                                 </p>
                                 <p className="mt-1 text-sm text-gray-500">
                                   {item.description}
                                 </p>
-                              </div>
+                              </span>
                             </a>
                           ))}
                         </div>

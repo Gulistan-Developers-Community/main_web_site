@@ -3,7 +3,7 @@
   "packageManager": "yarn@3.2.0",
   "engines": {
     "npm": ">=7.5.2 <9.0.0",
-    "node": ">=v19.5.0"
+    "node": "18.x"
   },
   "scripts": {
     "dev": "next dev",

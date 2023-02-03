@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import { useState } from 'react';
 import { Tab } from '@headlessui/react';
-
+import SEO from '../components/seo';
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -60,6 +60,7 @@ export default function HomePage() {
 
   return (
     <>
+      <SEO />
       <Header />
       <div className="mx-auto max-w-7xl px-6">
         <div className="z-0 w-full max-w-md px-2 py-16 sm:px-0">

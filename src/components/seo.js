@@ -18,7 +18,7 @@ export default function SEO() {
           property="og:description"
           content="dasturlash, guliston, community, it, developer, gulistan developers community, gdev"
         />
-        <link rel="icon" href="../public/images/logo.ico" />
+        {/* <link rel="icon" type="image/png" href="../public/images/logo2.png" /> */}
       </Head>
     </>
   );

@@ -1,6 +1,10 @@
 {
   "name": "main_web_site",
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.2.0",
+  "engines": {
+    "npm": ">=7.5.2 <9.0.0",
+    "node": ">=v19.5.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

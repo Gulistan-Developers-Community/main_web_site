@@ -1,12 +1,14 @@
 import Header from '../components/Header';
 import { Tab } from '@headlessui/react';
 import SEO from '../components/seo';
+import { useState } from 'react';
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function HomePage() {
-  const [categories] = useState({
+  let [categories] = useState({
     Recent: [
       {
         id: 1,

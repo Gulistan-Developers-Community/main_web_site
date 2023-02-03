@@ -12,12 +12,12 @@
     "static": "next build && next export"
   },
   "dependencies": {
-    "next": "^12.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@headlessui/react": "latest",
+    "@headlessui/react": "^1.7.9",
     "@heroicons/react": "^2.0.14",
     "@tailwindcss/forms": "^0.5.3",
     "autoprefixer": "^10.4.13",

@@ -3,7 +3,7 @@ export default function Info() {
   return (
     <>
       <Header />
-      <div >the info</div>
-      </>
+      <div className="mx-auto max-w-7xl px-6">the info</div>
+    </>
   );
 }

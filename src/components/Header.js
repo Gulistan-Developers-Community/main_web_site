@@ -3,8 +3,9 @@ import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { solutions, recentPosts, resources, callsToAction } from './solution';
-import  Logo  from "./Logo";
-
+import Logo from './Logo';
+import Image from 'next/image';
+import LogoImage from '../public/images/logo.png';
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -16,7 +17,7 @@ export default function Header() {
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="/">
-              <Logo/>
+              <Logo />
             </a>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
@@ -238,11 +239,7 @@ export default function Header() {
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
-                  />
+                  <Image width={50} height={50} src={LogoImage} alt="logo" />
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -305,7 +302,10 @@ export default function Header() {
                 </a>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{' '}
-                  <a href="signup" className="text-indigo-600 hover:text-indigo-500">
+                  <a
+                    href="signup"
+                    className="text-indigo-600 hover:text-indigo-500"
+                  >
                     Sign in
                   </a>
                 </p>

@@ -6,6 +6,7 @@ import { solutions, recentPosts, resources, callsToAction } from './solution';
 import Logo from './Logo';
 import Image from 'next/image';
 import LogoImage from '../public/images/logo.png';
+import Link from 'next/link';
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -268,12 +269,12 @@ export default function Header() {
             </div>
             <div className="space-y-6 py-6 px-5">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a
+                <Link
                   href="/info"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
                   Info
-                </a>
+                </Link>
 
                 <a
                   href="#"

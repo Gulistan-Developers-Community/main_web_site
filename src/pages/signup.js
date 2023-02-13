@@ -1,6 +1,6 @@
 import Logo from '../components/Logo';
 import SEO from '../components/seo';
-export default function () {
+export default function Signup() {
   return (
     <>
       <SEO />

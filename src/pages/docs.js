@@ -1,11 +1,7 @@
-import Header from '../components/Header';
-import SEO from '../components/seo';
-
-export default function () {
+export default function Docs() {
   return (
     <>
-      <SEO />
-      <Header />
+      
       <div className="bg-white py-24 sm:py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">

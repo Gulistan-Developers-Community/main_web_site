@@ -1,14 +1,13 @@
-import {Header} from './Header'
-import {SEO} from './seo'
+import Header from './Header'
+import SEO from './seo'
 
 export default function Layout({ children }) {
   return (
     <>
-    <SEO >
-    <Header>
+    <SEO />
+    <Header/>
       <main>{children}</main>
-      </Header>
-      </SEO >
+      
     </>
   )
 }

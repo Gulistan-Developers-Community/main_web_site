@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Parse from "../services/parse";
-export default function Home() {
+export default function ParsePage() {
     
   const [employeeName, setEmployeeName] = useState("");
   const [employeeEmail, setEmployeeEmail] = useState("");
@@ -53,16 +53,19 @@ export default function Home() {
         <h1>Create a employee </h1>
         <div >
           <input
+            required
             placeholder="name"
             onChange={(e) => setEmployeeName(e.target.value)}
             value={employeeName}
           />
           <input
+            required
             placeholder="email"
             onChange={(e) => setEmployeeEmail(e.target.value)}
             value={employeeEmail}
           />
           <input
+            required
             placeholder="password"
             onChange={(e) => setEmployeePassword(e.target.value)}
             value={employeePassword}

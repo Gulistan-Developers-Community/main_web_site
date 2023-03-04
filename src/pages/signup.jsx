@@ -1,4 +1,4 @@
-export default function () {
+export default function Sign() {
   return (
     <>
       <div className="-z-1 flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

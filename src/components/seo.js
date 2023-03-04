@@ -24,7 +24,12 @@ export default function SEO() {
           content="5ZRA74mGH1O-mza1FKr6NAEU2yQJK1iNITMlDwt8h_M"
         />
 
-        {/* <link rel="icon" type="image/png" href="../public/images/logo2.png" /> */}
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="https://avatars.githubusercontent.com/u/105513348?s=200&v=4"
+        />
       </Head>
     </>
   );

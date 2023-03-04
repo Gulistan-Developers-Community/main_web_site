@@ -1,6 +1,21 @@
 import Logo from '../components/Logo';
 import SEO from '../components/seo';
+import { useState } from 'react';
 export default function () {
+  const [mail, setMail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handlePost = async (e) => {
+    e.preventDefault();
+
+    // reset error and message
+    setError('');
+
+    // fields check
+    if (!mail || !password) return setError('All fields are required');
+    console.log(mail, password);
+  };
   return (
     <>
       <SEO />
@@ -11,17 +26,13 @@ export default function () {
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
               Sign in to your account
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
-              Or
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                start your 14-day free trial
-              </a>
-            </p>
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form
+            className="mt-8 space-y-6"
+            action="#"
+            method="POST"
+            onSubmit={handlePost}
+          >
             <input type="hidden" name="remember" value="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
@@ -36,6 +47,7 @@ export default function () {
                   required
                   className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   placeholder="Email address"
+                  onChange={(e) => setMail(e.target.value)}
                 />
               </div>
               <div>
@@ -50,10 +62,11 @@ export default function () {
                   required
                   className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
                   id="remember-me"
@@ -77,7 +90,7 @@ export default function () {
                   Forgot your password?
                 </a>
               </div>
-            </div>
+            </div> */}
             <div>
               <button
                 type="submit"

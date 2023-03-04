@@ -18,6 +18,7 @@ export default function SEO() {
           property="og:description"
           content="dasturlash, guliston, community, it, developer, gulistan developers community, gdev"
         />
+        <meta name="google-site-verification" content="5ZRA74mGH1O-mza1FKr6NAEU2yQJK1iNITMlDwt8h_M" /> //verification
         {/* <link rel="icon" type="image/png" href="../public/images/logo2.png" /> */}
       </Head>
     </>

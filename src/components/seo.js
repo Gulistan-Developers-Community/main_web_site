@@ -19,7 +19,13 @@ export default function SEO() {
           property="og:description"
           content="dasturlash, guliston, community, it, developer, gulistan developers community, gdev"
         />
-        {/* <link rel="icon" type="image/png" href="../public/images/logo2.png" /> */}
+        <link rel="icon" type="image/png" href="../public/images/logo2.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="https://avatars.githubusercontent.com/u/105513348?s=96&v=4"
+        />
       </Head>
        <Script id='seo' strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

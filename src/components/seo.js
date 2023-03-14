@@ -20,8 +20,6 @@ export default function SEO() {
           content="dasturlash, guliston, community, it, developer, gulistan developers community, gdev"
         />
         {/* <link rel="icon" type="image/png" href="../public/images/logo2.png" /> */}
-        
-       
       </Head>
        <Script id='seo' strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

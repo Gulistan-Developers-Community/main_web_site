@@ -1,4 +1,4 @@
-import Header from './Header'
+import Header from './Header2'
 import SEO from './seo'
 
 export default function Layout({ children }) {

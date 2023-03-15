@@ -12,6 +12,7 @@
     "static": "next build && next export"
   },
   "dependencies": {
+    "firebase": "^9.17.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"

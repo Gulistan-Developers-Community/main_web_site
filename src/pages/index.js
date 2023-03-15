@@ -1,10 +1,13 @@
-
+import Login from '../components/Login'
+import UserDashboard from '../components/UserDashboard'
+import { useAuth } from '../context/AuthContext'
 
 export default function HomePage() {
+  const { currentUser } = useAuth()
   return (
     <>
-      qwe
-      qwe
+     {!currentUser && <Login />}
+      {currentUser && <UserDashboard/>}
      </>
   );
 }

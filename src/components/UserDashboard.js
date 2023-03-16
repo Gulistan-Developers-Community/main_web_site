@@ -25,7 +25,7 @@ export default function UserDashboard() {
     async function handleAddTodo() {
         if (!todo) { return }
         const newKey = Object.keys(todos).length === 0 ? 1 : Math.max(...Object.keys(todos)) + 1
-        console.log(newKey)
+        console.log(Object.keys(todos))
         setTodos({ ...todos, [newKey]: todo })
         const userRef = doc(db, 'users', currentUser.uid)
         await setDoc(userRef, {
@@ -34,6 +34,7 @@ export default function UserDashboard() {
             }
         }, { merge: true })
         setTodo('')
+        console.log(userRef)
     }
 
     async function handleEditTodo() {

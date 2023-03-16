@@ -1,18 +1,24 @@
-import { initializeApp } from 'firebase/app'
+import { initializeApp, getApp } from "firebase/app";
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
-const firebaseConfig2 = {
-    apiKey: process.env.APIKEY,
-    authDomain: process.env.AUTHDOMAIN,
-    projectId: process.env.PROJECTID,
-    storageBucket: process.env.STORAGEBUCKET,
-    messagingSenderId: process.env.MESSAGINGSENDERID,
-    appId: process.env.APPID,
-    measurementId: process.env.MEASUREMENTID
-};
+// const firebaseConfig2 = {
+//     apiKey: process.env.APIKEY,
+//     authDomain: process.env.AUTHDOMAIN,
+//     projectId: process.env.PROJECTID,
+//     storageBucket: process.env.STORAGEBUCKET,
+//     messagingSenderId: process.env.MESSAGINGSENDERID,
+//     appId: process.env.APPID,
+//     measurementId: process.env.MEASUREMENTID
+// };
 
-const firebaseConfig = {
+
+
+function initializeAppIfNecessary() {
+  try {
+    return getApp();
+  } catch (any) {
+    const firebaseConfig = {
   apiKey: "AIzaSyBVKH3s-ocn--d3IJy5sgzOiOAtBuX3M6M",
   authDomain: "gdev-4964b.firebaseapp.com",
   projectId: "gdev-4964b",
@@ -21,8 +27,12 @@ const firebaseConfig = {
   appId: "1:36854348546:web:1b267ba434d3f4477d601b",
   measurementId: "G-7XVY1VPYB5"
 };
+    return initializeApp(firebaseConfig);
+  }
+}
 
-const app = initializeApp(firebaseConfig)
-
-export const auth = getAuth(app)
-export const db = getFirestore(app)
+const app = initializeAppIfNecessary();
+const auth = getAuth(app)
+const db = getFirestore(app)
+ 
+ export {auth, db}

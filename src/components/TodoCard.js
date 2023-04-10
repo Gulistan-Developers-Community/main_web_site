@@ -7,7 +7,7 @@ export default function TodoCard(props) {
 
 
     return (
-        <div className='p-2 relative sm:p-3 border flex items-stretch border-white border-solid '>
+        <div className='p-2  sm:p-3 border flex items-stretch border-white border-solid '>
 
             <div className='flex-1 flex'>
                 {!(edit === todoKey) ? <>{children}</> : (

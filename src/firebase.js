@@ -2,31 +2,24 @@ import { initializeApp, getApp } from "firebase/app";
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
-// const firebaseConfig2 = {
-//     apiKey: process.env.APIKEY,
-//     authDomain: process.env.AUTHDOMAIN,
-//     projectId: process.env.PROJECTID,
-//     storageBucket: process.env.STORAGEBUCKET,
-//     messagingSenderId: process.env.MESSAGINGSENDERID,
-//     appId: process.env.APPID,
-//     measurementId: process.env.MEASUREMENTID
-// };
+
+const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_APIKEY,
+    authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
+    projectId: process.env.NEXT_PUBLIC_PROJECTID,
+    storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
+    appId: process.env.NEXT_PUBLIC_APPID,
+    measurementId: process.env.NEXT_PUBLIC_MEASUREMENTID
+};
 
 
-
+console.log(firebaseConfig)
 function initializeAppIfNecessary() {
   try {
     return getApp();
-  } catch (any) {
-    const firebaseConfig = {
-  apiKey: "AIzaSyBVKH3s-ocn--d3IJy5sgzOiOAtBuX3M6M",
-  authDomain: "gdev-4964b.firebaseapp.com",
-  projectId: "gdev-4964b",
-  storageBucket: "gdev-4964b.appspot.com",
-  messagingSenderId: "36854348546",
-  appId: "1:36854348546:web:1b267ba434d3f4477d601b",
-  measurementId: "G-7XVY1VPYB5"
-};
+  } catch (error) {
+    firebaseConfig
     return initializeApp(firebaseConfig);
   }
 }

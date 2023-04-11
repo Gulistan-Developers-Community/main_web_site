@@ -23,7 +23,7 @@ export default function Modal(props) {
                 <h2 onClick={() => {
                     logout()
                     setOpenModal(false)
-                }} className='select-none duration-300 hover:pl-2 cursor-pointer'>Logout</h2>
+                }} className='flex select-none duration-300 justify-center hover:pl-2 cursor-pointer'>Logout</h2>
             </div>
         </div>,
         _document.getElementById('portal')

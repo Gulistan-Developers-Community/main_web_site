@@ -305,7 +305,7 @@ export default function Header() {
                   (currentUser) ? <h2 onClick={() => {
                     logout()
                     setOpenModal(false)
-                }} className='select-none duration-300 hover:pl-2 cursor-pointer'>Logout</h2> : <a
+                }} className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Logout</h2> : <a
                   href="signup"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >

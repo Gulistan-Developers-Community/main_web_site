@@ -14,7 +14,7 @@ const firebaseConfig = {
 };
 
 
-console.log(firebaseConfig)
+// console.log(firebaseConfig)
 function initializeAppIfNecessary() {
   try {
     return getApp();

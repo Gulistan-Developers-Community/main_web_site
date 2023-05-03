@@ -3,7 +3,7 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_APIKEY,
     authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
     projectId: process.env.NEXT_PUBLIC_PROJECTID,
@@ -27,5 +27,5 @@ function initializeAppIfNecessary() {
 const app = initializeAppIfNecessary();
 const auth = getAuth(app)
 const db = getFirestore(app)
- 
+
  export {auth, db}

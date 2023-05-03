@@ -9,12 +9,19 @@ import React, { useEffect, useState } from 'react'
 import Modal from './Modal'
 import Link from 'next/link';
 import { useAuth } from '../context/AuthContext'
+import { getAuth } from "firebase/auth";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Header() {
+  
+  const auth = getAuth();
+  const user = auth.currentUser;
+  
+   const photoURL = user?.photoURL
+ 
   
   
    
@@ -215,8 +222,8 @@ export default function Header() {
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
             {openModal && <Modal setOpenModal={setOpenModal} />}
-            <div className='sticky top-0 w-full left-0 bg-inherit flex items-center justify-between p-4 border-b border-solid border-white'>
-                {(currentUser) ? <i onClick={() => setOpenModal(true)} className="fa-solid fa-user text-xl duration-300 hover:opacity-40 cursor-pointer sm:text-3xl"></i> : <a
+            <div className='sticky top-0 w-full left-0 bg-inherit flex items-center justify-between border-b border-solid border-white'>
+                {(currentUser) ? <Image width={35} height={35} src={photoURL || 'null'} onClick={() => setOpenModal(true)} alt='profil' className="text-xl duration-300 hover:opacity-40 cursor-pointer sm:text-3xl"/> : <a
               href="signup"
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
             >

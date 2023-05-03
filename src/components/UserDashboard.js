@@ -15,13 +15,6 @@ export default function UserDashboard() {
 
 
 
-
-    // useEffect(() => {
-    //     if (!userInfo || Object.keys(userInfo).length === 0) {
-    //         setAddTodo(true)
-    //     }
-    // }, [userInfo])
-
     async function handleAddTodo() {
         if (!todo) { return }
         const newKey = Object.keys(todos).length === 0 ? 1 : Math.max(...Object.keys(todos)) + 1
@@ -34,7 +27,7 @@ export default function UserDashboard() {
             }
         }, { merge: true })
         setTodo('')
-        console.log(userRef)
+        // console.log(userRef)
     }
 
     async function handleEditTodo() {
@@ -64,7 +57,6 @@ export default function UserDashboard() {
         return async () => {
             const tempObj = { ...todos }
             delete tempObj[todoKey]
-
             setTodos(tempObj)
             const userRef = doc(db, 'users', currentUser.uid)
             await setDoc(userRef, {
@@ -88,9 +80,11 @@ export default function UserDashboard() {
             {(!loading) && (
                 <>
                     {Object.keys(todos).map((todo, i) => {
+                       
                         return (
                             <TodoCard handleEditTodo={handleEditTodo} key={i} handleAddEdit={handleAddEdit} edit={edit} todoKey={todo} edittedValue={edittedValue} setEdittedValue={setEdittedValue} handleDelete={handleDelete}>
                                 {todos[todo]}
+                               
                             </TodoCard>
                         )
                     })}

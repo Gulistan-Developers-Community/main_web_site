@@ -5,7 +5,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { solutions, recentPosts, resources, callsToAction } from './solution';
 import Logo from './Logo';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Modal from './Modal'
 import Link from 'next/link';
 import { useAuth } from '../context/AuthContext'
@@ -19,15 +19,10 @@ export default function Header() {
   
   const auth = getAuth();
   const user = auth.currentUser;
-  
-   const photoURL = user?.photoURL
- 
-  
-  
-   
-
+  const photoURL = user?.photoURL
   const { currentUser, logout } = useAuth()
-   const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
+
   return (
     <Popover className="relative bg-white">
       <div className="mx-auto max-w-7xl px-6">

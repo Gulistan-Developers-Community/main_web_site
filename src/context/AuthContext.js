@@ -3,6 +3,7 @@ import { auth } from '../firebase'
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
 
 
+// @ts-ignore
 const AuthContext = React.createContext()
 
 export function useAuth() {
@@ -10,41 +11,44 @@ export function useAuth() {
 }
 
 export default function AuthProvider({ children }) {
-    const [currentUser, setCurrentUser] = useState(null)
-    const [loading, setLoading] = useState(true)
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    function signup(email, password) {
-        createUserWithEmailAndPassword(auth, email, password)
-        return
-    }
+  /**
+   * @param {string} email
+   * @param {string} password
+   */
+  function signup(email, password) {
+    createUserWithEmailAndPassword(auth, email, password);
+    return;
+  }
 
-    function login(email, password) {
-        return signInWithEmailAndPassword(auth, email, password)
-    }
+  function login(email, password) {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
 
-    function logout() {
-        return signOut(auth)
-    }
+  function logout() {
+    return signOut(auth);
+  }
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
+    return unsubscribe;
+  }, []);
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, async user => {
-            setCurrentUser(user)
-            setLoading(false)
-        })
-        return unsubscribe
-    }, [])
+  const value = {
+    currentUser,
+    login,
+    signup,
+    logout,
+  };
 
-    const value = {
-        currentUser,
-        login,
-        signup,
-        logout,
-    }
-
-    return (
-        <AuthContext.Provider value={value}>
-            {!loading && children}
-        </AuthContext.Provider>
-    )
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }

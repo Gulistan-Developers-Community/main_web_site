@@ -1,15 +1,15 @@
-import { jsPDF } from "jspdf";
-import React, { useState } from "react";
+import { jsPDF } from 'jspdf';
+import React, { useState } from 'react';
 
 function generatePDF(name) {
   const doc = new jsPDF({
-    orientation: "landscape",
-    unit: "in",
+    orientation: 'landscape',
+    unit: 'in',
     format: [10, 8],
   });
 
   doc.text(name, 3, 5);
-  doc.save("Certificate.pdf");
+  doc.save('Certificate.pdf');
 }
 
 export default function HomePage() {
@@ -24,7 +24,7 @@ export default function HomePage() {
       <button
         className="bg-blue-500 rounded-lg hover:bg-blue-700 text-white font-bold py-2 px-4"
         // @ts-ignore
-        onClick={generatePDF(ProfilName)}
+        onClick={generatePDF}
       >
         download
       </button>

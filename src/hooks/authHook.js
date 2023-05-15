@@ -13,12 +13,19 @@ export function useAuth() {
   const [currentUser, setCurrentUser] = useState();
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, user => setCurrentUser(user));
+    // @ts-ignore
+    const unsub = onAuthStateChanged(auth, (user) => setCurrentUser(user));
     return unsub;
   }, [])
 
   return currentUser;
 }
+
+/**
+ * @param {Blob | Uint8Array | ArrayBuffer} file
+ * @param {import("@firebase/auth").User} currentUser
+ * @param {{ (value: import("react").SetStateAction<boolean>): void; (arg0: boolean): void; }} setLoading
+ */
 
 export async function upload(file, currentUser, setLoading) {
   const fileRef = ref(storage, currentUser.uid + '.png');

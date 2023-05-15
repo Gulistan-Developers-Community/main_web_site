@@ -17,7 +17,8 @@
     "jspdf": "^2.5.1",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@headlessui/react": "^1.7.9",

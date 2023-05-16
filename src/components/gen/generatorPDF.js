@@ -1,15 +1,19 @@
 import { jsPDF } from 'jspdf';
 import React, { useState } from 'react';
+import { getAuth } from "firebase/auth";
 
-function generatePDF(name) {
+function generatePDF() {
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   const doc = new jsPDF({
-    orientation: 'landscape',
-    unit: 'in',
+    orientation: "landscape",
+    unit: "in",
     format: [10, 8],
   });
 
-  doc.text(name, 3, 5);
-  doc.save('Certificate.pdf');
+  doc.text(user.displayName, 3, 5);
+  doc.save("Certificate.pdf");
 }
 
 export default function HomePage() {

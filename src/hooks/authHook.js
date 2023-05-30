@@ -1,8 +1,14 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
-import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  updateProfile,
+} from 'firebase/auth';
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 
-
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 // Initialize Firebase
 
@@ -16,7 +22,7 @@ export function useAuth() {
     // @ts-ignore
     const unsub = onAuthStateChanged(auth, (user) => setCurrentUser(user));
     return unsub;
-  }, [])
+  }, []);
 
   return currentUser;
 }
@@ -28,16 +34,15 @@ export function useAuth() {
  */
 
 export async function upload(file, currentUser, setLoading) {
-  const fileRef = ref(storage, "UserProfilePhotos/" + currentUser.uid + ".png");
+  const fileRef = ref(storage, 'UserProfilePhotos/' + currentUser.uid + '.png');
 
   setLoading(true);
-  
+
   const snapshot = await uploadBytes(fileRef, file);
   const photoURL = await getDownloadURL(fileRef);
 
-  updateProfile(currentUser, {photoURL});
-  
-  setLoading(false);
-  alert("Uploaded file!");
-}
+  updateProfile(currentUser, { photoURL });
 
+  setLoading(false);
+  alert('Uploaded file!');
+}

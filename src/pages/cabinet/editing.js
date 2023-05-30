@@ -11,7 +11,7 @@ import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Login from '../../components/Login';
 import { useRouter } from 'next/router';
-import React from "react";
+import React from 'react';
 
 export default function EditPage() {
   const auth = getAuth();
@@ -28,7 +28,7 @@ export default function EditPage() {
 
   useEffect(() => {
     if (!user) {
-      router.push("/signup");
+      router.push('/signup');
     }
   }, [router, user]);
 
@@ -36,7 +36,7 @@ export default function EditPage() {
   const [photo, setPhoto] = useState(null);
   const [loading, setLoading] = useState(false);
   const [photoURL, setPhotoURL] = useState(
-    "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+    'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
   );
   console.log(currentUser);
 
@@ -131,11 +131,11 @@ export default function EditPage() {
             />
           </div>
         </form>
-        <p>name: {displayName || "none"}</p>
-        <p>email: {email || "none"}</p>
-        <p>photoURL: {photoURL1 || "none"}</p>
-        <p>{emailVerified || "none"}</p>
-        <p>uid: {uid || "none"}</p>
+        <p>name: {displayName || 'none'}</p>
+        <p>email: {email || 'none'}</p>
+        <p>photoURL: {photoURL1 || 'none'}</p>
+        <p>{emailVerified || 'none'}</p>
+        <p>uid: {uid || 'none'}</p>
       </div>
     </>
   );

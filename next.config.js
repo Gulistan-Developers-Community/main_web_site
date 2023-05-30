@@ -1,6 +1,5 @@
 module.exports = {
-     reactStrictMode: true,
-      images: {
+  images: {
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,4 +9,4 @@ module.exports = {
       },
     ],
   },
-    }
+};

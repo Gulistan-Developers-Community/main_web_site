@@ -5,23 +5,22 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { solutions, recentPosts, resources, callsToAction } from './solution';
 import Logo from './Logo';
 import Image from 'next/image';
-import React, { useState } from 'react'
-import Modal from './Modal'
+import React, { useState } from 'react';
+import Modal from './Modal';
 import Link from 'next/link';
-import { useAuth } from '../context/AuthContext'
-import { getAuth } from "firebase/auth";
+import { useAuth } from '../context/AuthContext';
+import { getAuth } from 'firebase/auth';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Header() {
-  
   const auth = getAuth();
   const user = auth.currentUser;
-  const photoURL = user?.photoURL
-  const { currentUser, logout } = useAuth()
-  const [openModal, setOpenModal] = useState(false)
+  const photoURL = user?.photoURL;
+  const { currentUser, logout } = useAuth();
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <Popover className="relative bg-white">
@@ -217,16 +216,28 @@ export default function Header() {
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
             {openModal && <Modal setOpenModal={setOpenModal} />}
-            <div className='sticky top-0 w-full left-0 bg-inherit flex items-center justify-between border-b border-solid border-white'>
-                {(currentUser) ? <Image width={35} height={35} src={photoURL || 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'} onClick={() => setOpenModal(true)} alt='profil' className="text-xl duration-300 hover:opacity-40 cursor-pointer sm:text-3xl"/> : <a
-              href="signup"
-              className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-            >
-              Sign up
-            </a>}
-                
+            <div className="sticky top-0 w-full left-0 bg-inherit flex items-center justify-between border-b border-solid border-white">
+              {currentUser ? (
+                <Image
+                  width={35}
+                  height={35}
+                  src={
+                    photoURL ||
+                    'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                  }
+                  onClick={() => setOpenModal(true)}
+                  alt="profil"
+                  className="text-xl duration-300 hover:opacity-40 cursor-pointer sm:text-3xl"
+                />
+              ) : (
+                <a
+                  href="signup"
+                  className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                >
+                  Sign up
+                </a>
+              )}
             </div>
-            
           </div>
         </div>
       </div>
@@ -247,9 +258,7 @@ export default function Header() {
           <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
-                <div>
-                  
-                </div>
+                <div></div>
                 <div className="-mr-2">
                   <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Close menu</span>
@@ -303,19 +312,24 @@ export default function Header() {
                 ))}
               </div>
               <div>
-                {
-                  (currentUser) ? <h2 onClick={() => {
-                    logout()
-                    setOpenModal(false)
-                }} className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Logout</h2> : <a
-                  href="signup"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                >
-                  Sign up
-                </a>
-                }
-                
-                
+                {currentUser ? (
+                  <h2
+                    onClick={() => {
+                      logout();
+                      setOpenModal(false);
+                    }}
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                  >
+                    Logout
+                  </h2>
+                ) : (
+                  <a
+                    href="signup"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                  >
+                    Sign up
+                  </a>
+                )}
               </div>
             </div>
           </div>

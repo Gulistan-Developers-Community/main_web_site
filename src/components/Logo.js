@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import LogoImage from '../public/images/logo.png';
-import  Link  from "next/link";
+import Link from 'next/link';
 export default function Logo() {
   return (
     <>

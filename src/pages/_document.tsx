@@ -1,6 +1,4 @@
-// pages/_document.js
-import { Html, Head, Main, NextScript } from 'next/document'
-import React from "react";
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
@@ -10,8 +8,7 @@ export default function Document() {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          // @ts-ignore
-          crossOrigin="true"
+          crossOrigin="use-credentials"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&display=swap"

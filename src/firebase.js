@@ -1,12 +1,12 @@
 import { initializeApp, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getStorage } from "firebase/storage";
+import { getStorage } from 'firebase/storage';
 import {
   deleteObject,
   ref,
   uploadBytes,
   getDownloadURL,
-} from "firebase/storage";
+} from 'firebase/storage';
 import {
   collection,
   doc,
@@ -17,10 +17,10 @@ import {
   getFirestore,
   onSnapshot,
   orderBy,
-} from "firebase/firestore";
+} from 'firebase/firestore';
 
-import { useEffect, useState } from "react";
-import { useAuth } from "./context/AuthContext";
+import { useEffect, useState } from 'react';
+import { useAuth } from './context/AuthContext';
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_APIKEY,
@@ -52,44 +52,44 @@ export const deleteFile = (filePath) => {
   return deleteObject(imageRef);
 };
 
-const uploadFile = (file, filePath) => {
-  return new Promise(async (resolve, reject) => {
-    const storageRef = ref(storage, filePath);
-    try {
-      await uploadBytes(storageRef, file);
-      const url = await getDownloadURL(storageRef);
-      resolve(url);
-    } catch (error) {
-      reject(error);
-    }
-  });
-};
-export const updateUserRecords = (collectionName, uid, updatedObj) => {
-  return new Promise(async (resolve, reject) => {
-    const q = query(collection(db, collectionName), where("uid", "==", uid));
-    try {
-      const snapshot = await getDocs(q);
-      const updatePromises = [];
-      snapshot.forEach((document) => {
-        updatePromises.push(
-          updateDoc(doc(db, collectionName, document.id), updatedObj)
-        );
-      });
-      await Promise.all(updatePromises);
-      resolve();
-    } catch (error) {
-      reject(error);
-    }
-  });
-};
+// const uploadFile = (file, filePath) => {
+//   return new Promise(async (resolve, reject) => {
+//     const storageRef = ref(storage, filePath);
+//     try {
+//       await uploadBytes(storageRef, file);
+//       const url = await getDownloadURL(storageRef);
+//       resolve(url);
+//     } catch (error) {
+//       reject(error);
+//     }
+//   });
+// };
+// export const updateUserRecords = (collectionName, uid, updatedObj) => {
+//   return new Promise(async (resolve, reject) => {
+//     const q = query(collection(db, collectionName), where("uid", "==", uid));
+//     try {
+//       const snapshot = await getDocs(q);
+//       const updatePromises = [];
+//       snapshot.forEach((document) => {
+//         updatePromises.push(
+//           updateDoc(doc(db, collectionName, document.id), updatedObj)
+//         );
+//       });
+//       await Promise.all(updatePromises);
+//       resolve();
+//     } catch (error) {
+//       reject(error);
+//     }
+//   });
+// };
 
-export const useFirestore = (collectionName = "gallery") => {
+export const useFirestore = (collectionName = 'gallery') => {
   const [documents, setDocuments] = useState([]);
   const { setAlert } = useAuth();
   useEffect(() => {
     const q = query(
       collection(db, collectionName),
-      orderBy("timestamp", "desc")
+      orderBy('timestamp', 'desc')
     );
     const unsubscribe = onSnapshot(
       q,
@@ -103,10 +103,10 @@ export const useFirestore = (collectionName = "gallery") => {
       (error) => {
         setAlert({
           isAlert: true,
-          severity: "error",
+          severity: 'error',
           message: error.message,
           timeout: 8000,
-          location: "main",
+          location: 'main',
         });
         console.log(error);
       }

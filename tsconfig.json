@@ -22,5 +22,17 @@
     "next.config.js",
     "tailwind.config.js"
   ],
-  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"]
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/components/Header.js",
+    "src/components/Header.js",
+    "src/components/Logo.js",
+    "src/components/Layout.js",
+    "src/components/Layout.js",
+    "src/components/seo.js",
+    "src/components/seo.js",
+    "src/pages/cabinet/editing.js"
+  ]
 }

@@ -3,9 +3,6 @@ import React from 'react'
 export default function TodoCard(props) {
     const { children, edit, handleAddEdit, edittedValue, setEdittedValue, todoKey, handleEditTodo, handleDelete } = props
 
-
-
-
     return (
         <div className='p-2  sm:p-3 border flex items-stretch border-white border-solid '>
 

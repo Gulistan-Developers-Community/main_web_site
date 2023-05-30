@@ -1,5 +1,5 @@
 import { jsPDF } from 'jspdf';
-import React, { useState } from 'react';
+import React from "react";
 import { getAuth } from "firebase/auth";
 
 function generatePDF() {
@@ -17,14 +17,8 @@ function generatePDF() {
 }
 
 export default function HomePage() {
-  // const [ProfilName, useProfileName] = useState("John Doe");
   return (
     <>
-      {/* <input
-        value={ProfilName}
-        onChange={(e) => useProfileName(e.target.value)}
-        placeholder="the name"
-      ></input> */}
       <button
         className="bg-blue-500 rounded-lg hover:bg-blue-700 text-white font-bold py-2 px-4"
         // @ts-ignore

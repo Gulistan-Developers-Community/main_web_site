@@ -2,18 +2,8 @@ import { initializeApp, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 import {
-  deleteObject,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-} from 'firebase/storage';
-import {
   collection,
-  doc,
-  getDocs,
   query,
-  updateDoc,
-  where,
   getFirestore,
   onSnapshot,
   orderBy,
@@ -33,7 +23,6 @@ export const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENTID,
 };
 
-// console.log(firebaseConfig)
 function initializeAppIfNecessary() {
   try {
     return getApp();
@@ -47,10 +36,10 @@ function initializeAppIfNecessary() {
 // const auth = getAuth(app);
 // const db = getFirestore(app);
 
-export const deleteFile = (filePath) => {
-  const imageRef = ref(storage, filePath);
-  return deleteObject(imageRef);
-};
+// export const deleteFile = (filePath) => {
+//   const imageRef = ref(storage, filePath);
+//   return deleteObject(imageRef);
+// };
 
 // const uploadFile = (file, filePath) => {
 //   return new Promise(async (resolve, reject) => {

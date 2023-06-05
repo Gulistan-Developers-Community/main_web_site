@@ -4,7 +4,7 @@ import ReactDom from 'react-dom';
 import { useAuth } from '../context/AuthContext';
 import EditPage from '../pages/cabinet/editing';
 
-export default function Modal(props: { setOpenModal: any }) {
+export default function Modal(props) {
   const { setOpenModal } = props;
   const [_document, set_document] = useState({});
   const { logout } = useAuth();
@@ -49,6 +49,6 @@ export default function Modal(props: { setOpenModal: any }) {
         </Link>
       </h2>
     </div>,
-    (document as Document).getElementById('portal') as HTMLElement
+    document.getElementById('portal')
   );
 }

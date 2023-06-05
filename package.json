@@ -10,7 +10,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "static": "next build && next export"
+    "static": "next build && next export",
+    "turbo lint": "turbo build lint"
   },
   "dependencies": {
     "firebase": "^9.17.2",

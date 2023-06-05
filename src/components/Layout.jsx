@@ -1,12 +1,8 @@
 import Header from './Header';
-
 import SEO from './seo';
 
-type Props = {
-  children: string | JSX.Element | JSX.Element[];
-};
 
-export default function Layout({ children }: Props) {
+export default function Layout({children}) {
   return (
     <>
       <SEO />

@@ -3,7 +3,6 @@ import { auth } from '../firebase'
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
 
 
-// @ts-ignore
 const AuthContext = React.createContext()
 
 export function useAuth() {
@@ -14,10 +13,6 @@ export default function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  /**
-   * @param {string} email
-   * @param {string} password
-   */
   function signup(email, password) {
     createUserWithEmailAndPassword(auth, email, password);
     return;

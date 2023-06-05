@@ -34,5 +34,5 @@
     "src/components/seo.js",
     "src/components/seo.js",
     "src/pages/cabinet/editing.js"
-  ]
+, "src/pages/cabinet/index.jsx", "src/pages/signup.jsx", "src/pages/info.jsx", "src/pages/index.jsx", "src/pages/docs.jsx", "src/pages/_document.jsx", "src/pages/_app.jsx", "src/components/Layout.jsx", "src/components/Login.jsx"  ]
 }

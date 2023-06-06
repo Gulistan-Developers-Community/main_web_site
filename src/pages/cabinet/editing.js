@@ -81,7 +81,7 @@ export default function EditPage() {
           >
             Your Name
           </label>
-          <div className="relative">
+          <div className="">
             <input
               type="text"
               id="email-address-icon"

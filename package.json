@@ -14,12 +14,16 @@
     "turbo lint": "turbo build lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.13",
+    "@react-stately/collections": "^3.8.0",
+    "@react-stately/menu": "^3.5.2",
     "firebase": "^9.17.2",
     "html-to-image": "^1.11.11",
     "jspdf": "^2.5.1",
     "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-stately": "^3.23.0",
     "turbo": "^1.9.9",
     "uuid": "^9.0.0"
   },

@@ -19,6 +19,7 @@ export default function Header() {
   const auth = getAuth();
   const user = auth.currentUser;
   const photoURL = user?.photoURL;
+  const userName = user?.name;
   const { currentUser, logout } = useAuth();
   const [openModal, setOpenModal] = useState(false);
 
@@ -218,6 +219,10 @@ export default function Header() {
             {openModal && <Modal setOpenModal={setOpenModal} />}
             <div className="sticky top-0 w-full left-0 bg-inherit flex items-center justify-between border-b border-solid border-white">
               {currentUser ? (
+                <div className="flex gap-3 cursor-pointer duration-300 hover:opacity-40"  onClick={() => setOpenModal(true)}>
+                <h2 >
+                {user.displayName}
+                </h2>
                 <Image
                   width={35}
                   height={35}
@@ -225,10 +230,12 @@ export default function Header() {
                     photoURL ||
                     'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
                   }
-                  onClick={() => setOpenModal(true)}
+                 
                   alt="profil"
-                  className="text-xl duration-300 hover:opacity-40 cursor-pointer sm:text-3xl"
+                  className=""
                 />
+                </div>
+                
               ) : (
                 <a
                   href="signup"

@@ -10,7 +10,7 @@ import Modal from './Modal';
 import Link from 'next/link';
 import { useAuth } from '../context/AuthContext';
 import { getAuth } from 'firebase/auth';
-
+import ThemeChangeButton from './ThemeChangerButton'
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -219,8 +219,8 @@ export default function Header() {
             {openModal && <Modal setOpenModal={setOpenModal} />}
             <div className="sticky top-0 w-full left-0 bg-inherit flex items-center justify-between border-b border-solid border-white">
               {currentUser ? (
-                <div className="flex gap-3 cursor-pointer duration-300 hover:opacity-40"  onClick={() => setOpenModal(true)}>
-                <h2 >
+                <div className="flex gap-3 cursor-pointer duration-300 hover:opacity-40" >
+                <h2 onClick={() => setOpenModal(true)}>
                 {user.displayName}
                 </h2>
                 <Image
@@ -233,8 +233,11 @@ export default function Header() {
                  
                   alt="profil"
                   className=""
+                  onClick={() => setOpenModal(true)}
                 />
+                <ThemeChangeButton/>
                 </div>
+                
                 
               ) : (
                 <a

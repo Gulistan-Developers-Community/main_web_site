@@ -215,30 +215,31 @@ export default function Header() {
               )}
             </Popover>
           </Popover.Group>
+
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
             {openModal && <Modal setOpenModal={setOpenModal} />}
             <div className="sticky top-0 w-full left-0 bg-inherit flex items-center justify-between border-b border-solid border-white">
               {currentUser ? (
                 <div className="flex gap-3 cursor-pointer duration-300 hover:opacity-40" >
-                <h2 onClick={() => setOpenModal(true)}>
-                {user.displayName}
-                </h2>
-                <Image
-                  width={35}
-                  height={35}
-                  src={
-                    photoURL ||
-                    'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-                  }
-                 
-                  alt="profil"
-                  className=""
-                  onClick={() => setOpenModal(true)}
-                />
-                <ThemeChangeButton/>
+                  <h2 onClick={() => setOpenModal(true)}>
+                    {user.displayName}
+                  </h2>
+                  <Image
+                    width={35}
+                    height={35}
+                    src={
+                      photoURL ||
+                      'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                    }
+
+                    alt="profil"
+                    className=""
+                    onClick={() => setOpenModal(true)}
+                  />
+
                 </div>
-                
-                
+
+
               ) : (
                 <a
                   href="signup"
@@ -248,7 +249,9 @@ export default function Header() {
                 </a>
               )}
             </div>
+
           </div>
+          <ThemeChangeButton />
         </div>
       </div>
 

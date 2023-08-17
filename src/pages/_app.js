@@ -22,22 +22,24 @@ const darkTheme = createTheme({
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-    <NextThemesProvider
-      defaultTheme="system"
-      attribute="class"
-      value={{
-        light: lightTheme.className,
-        dark: darkTheme.className
-      }}
-    >
-    <AuthProvider>
-        <NextUIProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </NextUIProvider>
+
+      <AuthProvider>
+        <NextThemesProvider
+          defaultTheme="dark"
+          attribute="class"
+          value={{
+            light: lightTheme.className,
+            dark: darkTheme.className
+          }}
+        >
+          <NextUIProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </NextUIProvider>
+        </NextThemesProvider>
       </AuthProvider>
-    </NextThemesProvider>
+
     </>
   );
 }

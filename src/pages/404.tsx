@@ -13,7 +13,7 @@ export default function NotFoundPage() {
                     <div className="wf-ull lg:w-1/2">
 
                         <h1 className="mt-3 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">Page not found</h1>
-                        <p className="mt-4 text-gray-500 dark:text-gray-400">Sorry, the page you are looking for doesn't exist.Here are some helpful links:</p>
+                        <p className="mt-4 text-gray-500 dark:text-gray-400">Sorry, the page you are looking for doesn&apos;t exist.Here are some helpful links:</p>
 
                         <div className="flex items-center mt-6 gap-3">
                             <button className="flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-500 transition-colors duration-200 bg-white border rounded-lg gap-x-2 sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-700">

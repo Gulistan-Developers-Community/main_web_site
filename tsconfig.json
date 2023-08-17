@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -33,6 +37,16 @@
     "src/components/Layout.js",
     "src/components/seo.js",
     "src/components/seo.js",
-    "src/pages/cabinet/editing.js"
-, "src/pages/cabinet/index.jsx", "src/pages/signup.jsx", "src/pages/info.jsx", "src/pages/index.jsx", "src/pages/docs.jsx", "src/pages/_document.jsx", "src/pages/_app.js", "src/components/Layout.jsx", "src/components/Login.jsx", "src/components/ThemeChangerButton.js"  ]
+    "src/pages/cabinet/editing.js",
+    "src/pages/cabinet/index.jsx",
+    "src/pages/signup.jsx",
+    "src/pages/info.jsx",
+    "src/pages/index.jsx",
+    "src/pages/docs.jsx",
+    "src/pages/_document.jsx",
+    "src/pages/_app.js",
+    "src/components/Layout.jsx",
+    "src/components/Login.jsx",
+    "src/components/ThemeChangerButton.tsx"
+  ]
 }

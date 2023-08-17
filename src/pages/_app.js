@@ -25,7 +25,7 @@ export default function MyApp({ Component, pageProps }) {
 
       <AuthProvider>
         <NextThemesProvider
-          defaultTheme="dark"
+          defaultTheme="light"
           attribute="class"
           value={{
             light: lightTheme.className,

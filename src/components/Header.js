@@ -233,7 +233,7 @@ export default function Header() {
                       DefaultImage
                     }
                     alt="profil"
-                    className="h-8 w-8 rounded-full object-cover border-indigo-500 border-2"
+                    className="h-8 w-8 rounded-full object-cover border-blue-500  border-2"
                     onClick={() => setOpenModal(true)}
                   />
 

@@ -2,13 +2,13 @@ import Header from './Header';
 import SEO from './seo';
 
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <>
       <SEO />
 
       <Header />
-      <main>{children}</main>
+      <main className='flex justify-center'>{children}</main>
       <noscript
         dangerouslySetInnerHTML={{
           __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=G-7XVY1VPYB5"

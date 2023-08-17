@@ -17,29 +17,37 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "~/*": [
-        "./public/*"
-      ]
-    },
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
   "exclude": [
     "node_modules",
-    ".yarn"
+    ".yarn",
+    "post.config.js",
+    "next.config.js",
+    "tailwind.config.js"
   ],
-  "moduleResolution": [
-    "node_modules",
-    ".next",
-    "node"
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/components/Header.js",
+    "src/components/Header.js",
+    "src/components/Logo.tsx",
+    "src/components/Layout.js",
+    "src/components/Layout.js",
+    "src/components/seo.js",
+    "src/components/seo.js",
+    "src/pages/cabinet/editing.js",
+    "src/pages/cabinet/index.jsx",
+    "src/pages/signup.jsx",
+    "src/pages/info.jsx",
+    "src/pages/index.jsx",
+    "src/pages/docs.jsx",
+    "src/pages/_document.jsx",
+    "src/pages/_app.tsx",
+    "src/components/Layout.jsx",
+    "src/components/Login.jsx",
+    "src/components/ThemeChangerButton.tsx",
+    "src/components/Modal.jsx"
   ]
 }

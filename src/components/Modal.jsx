@@ -38,10 +38,10 @@ export default function Modal(props) {
         </h2>
       </div>
       <Link className="flex select-none duration-300 justify-center hover:pl-2 cursor-pointer"
-       href='/cabinet'
-       onClick={() => {
-        setOpenModal(false);
-      }}>
+        href='/cabinet'
+        onClick={() => {
+          setOpenModal(false);
+        }}>
         Cabinet</Link>
       <h2 className="flex select-none duration-300 justify-center hover:pl-2 cursor-pointer">
         <Link

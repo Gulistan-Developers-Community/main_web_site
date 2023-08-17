@@ -32,7 +32,7 @@
     "src/**/*.tsx",
     "src/components/Header.js",
     "src/components/Header.js",
-    "src/components/Logo.js",
+    "src/components/Logo.tsx",
     "src/components/Layout.js",
     "src/components/Layout.js",
     "src/components/seo.js",
@@ -44,9 +44,10 @@
     "src/pages/index.jsx",
     "src/pages/docs.jsx",
     "src/pages/_document.jsx",
-    "src/pages/_app.js",
+    "src/pages/_app.tsx",
     "src/components/Layout.jsx",
     "src/components/Login.jsx",
-    "src/components/ThemeChangerButton.tsx"
+    "src/components/ThemeChangerButton.tsx",
+    "src/components/Modal.jsx"
   ]
 }

@@ -4,17 +4,17 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { solutions, recentPosts, resources, callsToAction } from './solution';
 import Logo from './Logo';
-import Image from 'next/image';
+import { Avatar } from "@nextui-org/react";
 import React, { useState } from 'react';
 import Modal from './Modal';
 import Link from 'next/link';
 import { useAuth } from '../context/AuthContext';
 import { getAuth } from 'firebase/auth';
 import ThemeChangeButton from './ThemeChangerButton'
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
-
 export default function Header() {
   const auth = getAuth();
   const user = auth.currentUser;
@@ -224,14 +224,15 @@ export default function Header() {
                   <h2 onClick={() => setOpenModal(true)}>
                     {user.displayName}
                   </h2>
-                  <Image
+                  <Avatar
+                    preventDefault
+                    color="default"
                     width={35}
                     height={35}
                     src={
                       photoURL ||
-                      'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                      '/Profile_avatar_placeholder.png'
                     }
-
                     alt="profil"
                     className=""
                     onClick={() => setOpenModal(true)}

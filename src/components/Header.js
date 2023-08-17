@@ -11,7 +11,8 @@ import Link from 'next/link';
 import { useAuth } from '../context/AuthContext';
 import { getAuth } from 'firebase/auth';
 import ThemeChangeButton from './ThemeChangerButton'
-
+import DefaultImage from "../public/images/Profile_avatar_placeholder.png";
+import Image from 'next/image';
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -218,23 +219,21 @@ export default function Header() {
 
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
             {openModal && <Modal setOpenModal={setOpenModal} />}
-            <div className="sticky top-0 w-full left-0 bg-inherit flex items-center justify-between border-b border-solid border-white">
+            <div className="sticky top-0 w-full left-0 bg-inherit flex items-center justify-between">
               {currentUser ? (
-                <div className="flex gap-3 cursor-pointer duration-300 hover:opacity-40" >
-                  <h2 onClick={() => setOpenModal(true)}>
+                <div className="flex gap-3 cursor-pointer  hover:opacity-40 duration-300" >
+                  <h2 className='text-black' onClick={() => setOpenModal(true)}>
                     {user.displayName}
                   </h2>
-                  <Avatar
-                    preventDefault
-                    color="default"
-                    width={35}
-                    height={35}
+                  <Image
+                    width={40}
+                    height={40}
                     src={
                       photoURL ||
-                      '/Profile_avatar_placeholder.png'
+                      DefaultImage
                     }
                     alt="profil"
-                    className=""
+                    className="h-8 w-8 rounded-full object-cover border-indigo-500 border-2"
                     onClick={() => setOpenModal(true)}
                   />
 

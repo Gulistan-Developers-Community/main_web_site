@@ -1,7 +1,6 @@
 import { useTheme } from 'next-themes'
-import { Switch } from '@nextui-org/react'
-import { useEffect, useState } from 'react'
-function ThemeChanger() {
+import { JSX, SVGProps, useEffect, useState } from 'react'
+function ThemeChangeButton() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -9,7 +8,7 @@ function ThemeChanger() {
   const { systemTheme, theme, setTheme } = useTheme();
   if (!mounted) return null;
 
-  const MoonIcon = (props) => (
+  const MoonIcon = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
     <svg
       aria-hidden="true"
       focusable="false"
@@ -25,7 +24,7 @@ function ThemeChanger() {
       />
     </svg>
   );
-  const SunIcon = (props) => (
+  const SunIcon = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
     <svg
       aria-hidden="true"
       focusable="false"
@@ -58,14 +57,6 @@ function ThemeChanger() {
       onClick={() => setTheme('light')}
     />
 
-  )
-}
-
-const ThemeChangeButton = () => {
-  return (
-    <div>
-      <ThemeChanger />
-    </div>
   )
 }
 

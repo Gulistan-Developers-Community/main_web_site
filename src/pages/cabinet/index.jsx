@@ -4,7 +4,8 @@ import { useAuth } from '../../context/AuthContext';
 import { useRouter } from 'next/router';
 import { getAuth } from 'firebase/auth';
 import React from 'react';
-
+import { db } from '../../firebase';
+import { getFirestore, doc, getDocs, collection } from 'firebase/firestore';
 export default function HomePage() {
   const auth = getAuth();
   const user = auth.currentUser;
@@ -13,7 +14,24 @@ export default function HomePage() {
   if (!currentUser) {
     router.push('./signup');
   }
-  console.log('currentUser: ', user);
+  // console.log('currentUser: ', user);
+
+
+  // async function catchData() {
+  //   try {
+  //     const docsSnap = await getDocs('users');
+  //     if (docsSnap.docs.length > 0) {
+  //       docsSnap.forEach(doc => {
+  //         console.log(doc.data());
+
+  //       })
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+  // catchData()
+
   return (
     <>
       {!currentUser && <Login />}

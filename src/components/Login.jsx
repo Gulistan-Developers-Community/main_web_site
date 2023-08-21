@@ -51,7 +51,7 @@ export default function Login() {
       />
       <button
         onClick={submitHandler}
-        className="w-full max-w-[40ch] border border-white border-solid uppercase py-2 duration-300  after:top-0 after:right-full after:bg-white after:z-10 after:w-full after:h-full overflow-hidden hover:after:translate-x-full after:duration-300 hover:text-slate-900"
+        className="w-full max-w-[40ch] border border-white border-solid uppercase py-2 duration-300  after:top-0 after:right-full after:bg-white after:z-10 after:w-full after:h-full overflow-hidden hover:after:translate-x-full after:duration-300 hover:text-cyan-300"
       >
         <h2 className="">SUBMIT</h2>
       </button>

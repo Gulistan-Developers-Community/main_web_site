@@ -6,6 +6,12 @@ import { getAuth } from 'firebase/auth';
 import React from 'react';
 import { db } from '../../firebase';
 import { getFirestore, doc, getDocs, collection } from 'firebase/firestore';
+import dynamic from 'next/dynamic';
+
+const GeneratePDF = dynamic(() => import('../../components/gen/generatorPDF'), {
+  ssr: false,
+});
+
 export default function HomePage() {
   const auth = getAuth();
   const user = auth.currentUser;
@@ -35,7 +41,7 @@ export default function HomePage() {
   return (
     <>
       {!currentUser && <Login />}
-      {currentUser && <UserDashboard />}
+      {currentUser && [<UserDashboard />, <GeneratePDF />]}
     </>
   );
 }
